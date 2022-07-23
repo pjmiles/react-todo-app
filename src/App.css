@@ -1,0 +1,26 @@
+:root {
+  --priamry: #d71e5b;
+  --secondary: #8a4efc;
+  --light: #eee;
+  --light-alt: #61755b;
+  --dark: #131a25;
+  --dark-alt: #1a222e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.header{
+  background: var(--dark);
+  display: flex;
+  justify-content: space-around;
+  height: auto;
+}
+
+.header h1 {
+  color: var(--priamry);
+}
