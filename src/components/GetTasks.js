@@ -1,15 +1,13 @@
-import { useState, useEffect } from "react";
-import axiosInstance from '../api/axios'
+import { useEffect } from "react";
+import axiosInstance from "../api/axios";
 
-const GetTasks = () => {
-  const [todos, setTodos] = useState([]);
-
-  const getTask = async () => {
+const GetTasks = ({ getTask, todos }) => {
+  const handleDelete = async (id) => {
     try {
-      const data = await axiosInstance.get();
-      setTodos(data.data);
-    } catch {
-      console.log("Error fetching data");
+      await axiosInstance.delete(id + "/");
+      getTask();
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -25,12 +23,18 @@ const GetTasks = () => {
             <div className="task-card" key={todo.id}>
               <div className="task-title-container">
                 <h1 className="task-title">
-                  {todo.title} <input type="checkbox" className="checkbox" />
-                  <button className="delete">X</button>
+                  {todo.title} 
+                  <input type="checkbox" className="checkbox" />
+                  <button
+                    className="delete"
+                    onClick={() => handleDelete(todo.id)}
+                  >
+                    X
+                  </button>
                 </h1>
               </div>
               <div className="task-desc-container">
-                <p className="task-desc">{todo?.descriptions}</p>
+                <p className="task-desc">{todo?.decriptions}</p>
               </div>
             </div>
           );

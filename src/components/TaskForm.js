@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axiosInstance from "../api/axios";
 
-const TaskForm = () => {
+const TaskForm = ({getTask}) => {
   const [todo, setTodo] = useState({ title: "", decriptions: "" });
 
   const handleChange = (e) => {
@@ -16,6 +16,8 @@ const TaskForm = () => {
     try {
       const data = await axiosInstance.post("/", todo);
       setTodo(data);
+      getTask()
+      setTodo({title:"", decriptions: ""})
     } catch (error) {
       console.log(error);
     }
@@ -43,7 +45,7 @@ const TaskForm = () => {
             <input
               type="text"
               className="form-input"
-              placeholder="decriptions"
+              placeholder="description"
               name="decriptions"
               value={todo.decriptions}
               onChange={handleChange}

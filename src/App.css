@@ -5,6 +5,7 @@
   --light-alt: #61755b;
   --dark: #131a25;
   --dark-alt: #1a222e;
+  --shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 * {
@@ -61,8 +62,21 @@
 }
 
 .task-card {
-  background-color: var(--light);
   max-width: 300px;
-  display: flex;
-  
 }
+
+.task-title-container{
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.task-desc-container{
+  margin-top: 5px;
+}
+
+.checkbox{
+
+}
+
