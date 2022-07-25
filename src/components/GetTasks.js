@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
-import { API } from "../api/axios";
+import axiosInstance from '../api/axios'
 
 const GetTasks = () => {
   const [todos, setTodos] = useState([]);
 
   const getTask = async () => {
     try {
-      const data = await API;
+      const data = await axiosInstance.get();
       setTodos(data.data);
-      console.log(setTodos);
     } catch {
       console.log("Error fetching data");
     }
@@ -23,7 +22,7 @@ const GetTasks = () => {
       <div className="task-section">
         {todos.map((todo) => {
           return (
-            <div className="task-card">
+            <div className="task-card" key={todo.id}>
               <div className="task-title-container">
                 <h1 className="task-title">
                   {todo.title} <input type="checkbox" className="checkbox" />
