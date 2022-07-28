@@ -1,7 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axiosInstance from "../api/axios";
 
 const GetTasks = ({ getTask, todos }) => {
+  const [mount, setMount] = useState(false)
+
   const handleDelete = async (id) => {
     try {
       await axiosInstance.delete(id + "/");
@@ -10,10 +12,13 @@ const GetTasks = ({ getTask, todos }) => {
       console.log(error);
     }
   };
-
+  
   useEffect(() => {
-    getTask();
-  }, []);
+    if(!mount){
+      setMount(true)
+      getTask();
+    }
+  }, [getTask, mount]);
 
   return (
     <>
@@ -23,7 +28,7 @@ const GetTasks = ({ getTask, todos }) => {
             <div className="task-card" key={todo.id}>
               <div className="task-title-container">
                 <h1 className="task-title">
-                  {todo.title} 
+                  {todo.title}
                   <input type="checkbox" className="checkbox" />
                   <button
                     className="delete"
@@ -32,9 +37,9 @@ const GetTasks = ({ getTask, todos }) => {
                     X
                   </button>
                 </h1>
-              </div>
-              <div className="task-desc-container">
-                <p className="task-desc">{todo?.decriptions}</p>
+                <div className="task-desc-container">
+                  <p className="task-desc">{todo?.decriptions}</p>
+                </div>
               </div>
             </div>
           );

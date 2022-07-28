@@ -61,22 +61,42 @@
   color: var(--dark-alt);
 }
 
-.task-card {
-  max-width: 300px;
+.task-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 10px;
 }
 
 .task-title-container{
   box-shadow: var(--shadow);
   display: flex;
-  justify-content: space-around;
-
+  flex-direction: column;
+  max-width: 200px;
+  height: 100px;
+  border-radius: 30px;
+  color: var(--dark-alt);
+  padding: 8px;
+  text-align: center;
 }
 
 .task-desc-container{
   margin-top: 5px;
 }
 
-.checkbox{
-
+.task-title{
+  font-size: 16px;
+  margin: 8px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
+.checkbox{
+  
+}
+
+/* .title-wrap{
+ display: flex;
+ justify-content: space-between;
+} */
