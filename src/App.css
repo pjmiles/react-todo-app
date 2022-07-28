@@ -1,0 +1,61 @@
+:root {
+  --priamry: #d71e5b;
+  --secondary: #8a4efc;
+  --light: #eee;
+  --light-alt: #61755b;
+  --dark: #131a25;
+  --dark-alt: #1a222e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.header{
+  background: var(--dark);
+  display: flex;
+  justify-content: space-around;
+  height: auto;
+}
+
+.header h1 {
+  color: var(--priamry);
+}
+
+.form-section {
+  background-color: var(--secondary);
+}
+
+.form-control-container {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 4px solid black;
+}
+
+.form-control {
+  align-self: center;
+}
+
+.form-input {
+ margin: 5px;
+ padding: 10px;
+}
+
+.btn {
+  padding: 8px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: var(--secondary);
+}
+
+.btn:hover {
+  background: var(--priamry);
+  color: var(--dark-alt);
+}
