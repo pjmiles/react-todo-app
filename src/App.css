@@ -63,8 +63,8 @@
 
 .task-section {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-content: space-between;
+  grid-template-columns: repeat(auto-fit, 10rem);
+  justify-content: center;
   gap: 15px;
   padding: 10px 10px;
 }
