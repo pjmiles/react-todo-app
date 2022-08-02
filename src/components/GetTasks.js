@@ -1,9 +1,6 @@
-import { useEffect, useState } from "react";
 import axiosInstance from "../api/axios";
 
 const GetTasks = ({ getTask, todos }) => {
-  const [mount, setMount] = useState(false)
-
   const handleDelete = async (id) => {
     try {
       await axiosInstance.delete(id + "/");
@@ -13,12 +10,12 @@ const GetTasks = ({ getTask, todos }) => {
     }
   };
   
-  useEffect(() => {
-    if(!mount){
-      setMount(true)
-      getTask();
-    }
-  }, [getTask, mount]);
+  // useEffect(() => {
+  //   if(!mount){
+  //     setMount(true)
+  //     getTask();
+  //   }
+  // }, [getTask, mount]);
 
   return (
     <>
