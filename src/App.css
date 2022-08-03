@@ -5,6 +5,7 @@
   --light-alt: #61755b;
   --dark: #131a25;
   --dark-alt: #1a222e;
+  --shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 * {
@@ -59,3 +60,36 @@
   background: var(--priamry);
   color: var(--dark-alt);
 }
+
+.task-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 10rem);
+  justify-content: center;
+  gap: 15px;
+  padding: 10px 10px;
+}
+
+.task-title-container{
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  height: 100px;
+  border-radius: 30px;
+  color: var(--dark-alt);
+  padding: 8px;
+  text-align: center;
+}
+
+.task-desc-container{
+  margin-top: 5px;
+}
+
+.task-title{
+  font-size: 16px;
+  margin: 8px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
