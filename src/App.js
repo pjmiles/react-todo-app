@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import "./App.css";
 import "./components/Header";
 import Header from "./components/Header";
@@ -9,7 +8,6 @@ import axiosInstance from "./api/axios";
 
 function App() {
   const [todos, setTodos] = useState([]);
-
 
   useEffect(() => {
     const getTask = async () => {
