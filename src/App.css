@@ -15,6 +15,10 @@
   font-family: 'Fira Sans', sans-serif;
 }
 
+main {
+  height: 100vh;
+}
+
 .header{
   background: var(--dark);
   display: flex;
@@ -112,4 +116,26 @@
   margin-top: 10px;
   margin-right: 10px;
   cursor: pointer;
+}
+
+/* Spinner */
+.spiner {
+  text-align: center;
+}
+
+.error-message {
+  text-align: center;
+  color: var(--priamry);
+}
+/* footer section */
+footer {
+  bottom: 0;
+  text-align: center;
+  background: var(--dark-alt);
+  color: var(--light);
+}
+
+.foot-link {
+  color: var(--priamry);
+  text-decoration: none;
 }
