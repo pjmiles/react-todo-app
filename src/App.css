@@ -15,6 +15,10 @@
   font-family: 'Fira Sans', sans-serif;
 }
 
+main {
+  height: 100vh;
+}
+
 .header{
   background: var(--dark);
   display: flex;
@@ -73,23 +77,65 @@
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  max-width: 200px;
-  height: 100px;
-  border-radius: 30px;
+  max-width: 300px;
+  min-height: 100px;
   color: var(--dark-alt);
   padding: 8px;
   text-align: center;
 }
 
-.task-desc-container{
-  margin-top: 5px;
+.task-title-container h1 {
+  text-align: left;
 }
+
+.task-title-container p {
+  text-align: left;
+}
+
 
 .task-title{
-  font-size: 16px;
-  margin: 8px;
+  font-size: 18px;
+  margin-bottom: 8px;
   display: flex;
   justify-content: space-evenly;
+  
 }
 
+.delete-btn-container {
+  text-align: right;
+}
 
+.delete {
+  background-color: var(--priamry);
+  border: none;
+  color: var(--light);
+  font-weight: 500;
+  height: 25px;
+  border-radius: 10px;
+  width: 50px;
+  margin-top: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Spinner */
+.spiner {
+  text-align: center;
+}
+
+.error-message {
+  text-align: center;
+  color: var(--priamry);
+}
+/* footer section */
+footer {
+  bottom: 0;
+  text-align: center;
+  background: var(--dark-alt);
+  color: var(--light);
+}
+
+.foot-link {
+  color: var(--priamry);
+  text-decoration: none;
+}
