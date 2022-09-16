@@ -41,19 +41,23 @@ const GetTasks = ({ getTask, todos }) => {
               <div className="task-title-container">
                 <h1 className="task-title">
                   {todo.title}
-                  <input type="checkbox" className="checkbox"
-                  checked={selected === todo.id}
-                  onChange={() => completedTodo(todo.id, todo.title, todo.decriptions)} 
+                  <input
+                    type="checkbox"
+                    className="checkbox"
+                    checked={selected === todo.id}
+                    onChange={() =>
+                      completedTodo(todo.id, todo.title, todo.decriptions)
+                    }
                   />
+                </h1>
+                <p className="task-desc">{todo?.decriptions}</p>
+                <div className="delete-btn-container">
                   <button
                     className="delete"
                     onClick={() => handleDelete(todo.id)}
                   >
-                    X
+                    delete
                   </button>
-                </h1>
-                <div className="task-desc-container">
-                  <p className="task-desc">{todo?.decriptions}</p>
                 </div>
               </div>
             </div>
